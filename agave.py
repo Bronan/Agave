@@ -96,6 +96,8 @@ VERSION = """2.22"""
 #	
 #	To do: Change version number when change version moves above this line.
 #	v2.23+
+#	Get window more reliably
+#	Add $attack random pokemon replies ex:"Bronan uses Splash. It wasn't very effective"
 #	Implement scrolling
 #	Implement autocomplete
 #	Implement word wrap (instead of just line wrap)
