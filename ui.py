@@ -213,10 +213,10 @@ def getUserMsg(prompt, sleepEn=True, pwd=False, log=True, prevInput=None):
 		#elif (char > 264) and (char < 277): #F-keys
 		#elif (char > 276) and (char < 289): #Shift F-keys
 		# Non-printable ascii chars
-		elif char == 27:		#Esc
+		elif (char == 127) or (char < 32):
 			pass
-		# Process ascii chars
-		elif (char < 256) and (char > 0):
+		# Process ascii printable chars
+		elif char < 256:
 			lastChar = chr(char)
 			if lastChar != "\n":
 				if inInsertMode:
