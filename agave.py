@@ -91,7 +91,7 @@ VERSION = """2.22"""
 #	v2.21
 #	Fix crash when mode not supplied (add key to mode dict when any msg received)
 #	
-#	v2.23
+#	v2.22
 #	Fix problem with $nick (>2 was inside len() instead of outside in handleUser
 #	
 #	To do: Change version number when change version moves above this line.
