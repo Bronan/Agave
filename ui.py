@@ -9,7 +9,7 @@ prevInputRows = 1			# number of rows the user has dedicated for input
 
 CONSOLE.scrollok(1)			# Turn on scrolling
 CONSOLE.keypad(1)			# Allow entry from the keypad
-CONSOLE.timeout(600000)		# wait 600000 ms before entering sleep mode
+CONSOLE.timeout(8*3600000)	# wait 8 hours before entering sleep mode (needs ms)
 curses.noecho()				# Turn off character echo
 numRows, numCols = CONSOLE.getmaxyx()
 CONSOLE.move(numRows-1, 0)	# Position cursor
@@ -213,10 +213,10 @@ def getUserMsg(prompt, sleepEn=True, pwd=False, log=True, prevInput=None):
 		#elif (char > 264) and (char < 277): #F-keys
 		#elif (char > 276) and (char < 289): #Shift F-keys
 		# Non-printable ascii chars
-		elif (char == 127) or (char < 32):
+		elif char == 27:		#Esc
 			pass
-		# Process ascii printable chars
-		elif char < 256:
+		# Process ascii chars
+		elif (char < 256) and (char > 0):
 			lastChar = chr(char)
 			if lastChar != "\n":
 				if inInsertMode:
