@@ -9,7 +9,7 @@ AGAVEBOT = (COMMAND_CHAR + "agavebot").lower()
 AWAY = (COMMAND_CHAR + "away ").lower()
 CLEAR = (COMMAND_CHAR + "clear").lower()
 EXIT = (COMMAND_CHAR + "exit").lower()
-KICK = (COMMAND_CHAR + "kick ").lower()
+FIRE = (COMMAND_CHAR + "fire ").lower()
 HELP = (COMMAND_CHAR + "help").lower()
 NICK = (COMMAND_CHAR + "nick ").lower()
 QUIT = (COMMAND_CHAR + "quit").lower()
@@ -26,7 +26,7 @@ HELP_DICT = {\
 
 ORDERED_HELP_DICT = collections.OrderedDict(sorted(HELP_DICT.items(), key=lambda t: t[0]))
 
-def help(numCols, version, HIBER_NUM):
+def help(numCols, version, BOSS_NUM):
 	"""Returns help text to be displayed when requested."""
 	helpString = str("Agave Help v" + version).center(numCols) + "\n" + \
 	"".center(numCols,"-") + "\n" + \
@@ -40,7 +40,7 @@ def help(numCols, version, HIBER_NUM):
 	for command, text in ORDERED_HELP_DICT.items():
 		helpString += command.ljust(commandWidth) + text + "\n"
 	
-	helpString += "Press enter " + str(HIBER_NUM) + " times to enter hibernation mode.\n"
+	helpString += "Press enter " + str(BOSS_NUM) + " times to enter boss mode.\n"
 	
 	return helpString
 
