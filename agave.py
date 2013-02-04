@@ -1,7 +1,7 @@
 #!/usr/bin/python
 """Run Agave."""
 # Filename: agave.py
-import opsys, etc, database, traffic, ui	# opsys needs to be imported first.
+import opsys, etc, database, traffic	# opsys needs to be imported first.
 import random, time
 from thread import start_new_thread
 
@@ -11,7 +11,15 @@ VERSION = """2.22"""
 # Constants
 HIBER_NUM = 5
 TITLE = "Agave v" + VERSION
-LOCAL_IP = traffic.getIP()
+
+connectionType = raw_input("Local(L) or Remote(R) or Manual(M) Connection?: ")
+connectionType = str(connectionType)
+connectionType = connectionType.upper()
+
+#LOCAL_IP = traffic.getIP()
+LOCAL_IP = traffic.connectionPrompt(connectionType):
+
+import ui
 
 # Modes
 CHAT = 0
