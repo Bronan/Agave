@@ -12,12 +12,9 @@ VERSION = """2.22"""
 HIBER_NUM = 5
 TITLE = "Agave v" + VERSION
 
-connectionType = raw_input("Local(L) or Remote(R) or Manual(M) Connection?: ")
-connectionType = str(connectionType)
-connectionType = connectionType.upper()
 
 #LOCAL_IP = traffic.getIP()
-LOCAL_IP = traffic.connectionPrompt(connectionType):
+LOCAL_IP = traffic.connectionPrompt()
 
 import ui
 
