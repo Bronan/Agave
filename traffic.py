@@ -11,8 +11,7 @@ HEARTBEAT = (COMMAND_CHAR + "heartbeat").lower()
 KICK = (COMMAND_CHAR + "kick").lower()
 QUIT = (COMMAND_CHAR + "quit").lower()
 
-LOCAL_IP = socket.gethostbyname(socket.gethostname())	# Gets local IP address
-PORT = 7721												# Port to send packets on
+												# Port to send packets on
 def connectionPrompt(connectionType):
   
 	if connectionType[0:1] == 'L':
