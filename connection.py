@@ -6,7 +6,7 @@ You're welcome.'''
 import string, urllib2, socket
 
 def connectionPrompt():
-  connectionType = raw_input("Local(L) or Remote(R) Connection?: ")
+  connectionType = raw_input("Local(L) or Remote(R) or Manual(M) Connection?: ")
 	connectionType = str(connectionType)
 
 	connectionType = connectionType.upper()
@@ -19,8 +19,12 @@ def connectionPrompt():
 		myIP = urllib2.urlopen('http://ip.42.pl/raw').read()
 		print "Using Public IP: " + myIP
 		return myIP
-
 		
+	elif connectionType[0:1] == 'M':
+		myIP = raw_input("IP Address: ")
+		myIP =str(myIP)
+		print "Using Manual IP: " + myIP
+		return myIP
 	else:
 		print 'INVALID INPUT'
 		connectionPrompt()
