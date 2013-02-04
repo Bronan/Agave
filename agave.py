@@ -1,7 +1,7 @@
 #!/usr/bin/python
 """Run Agave."""
 # Filename: agave.py
-import opsys, etc, database, traffic	# opsys needs to be imported first.
+import opsys, etc, traffic, database	# opsys needs to be imported first.
 import random, time
 from thread import start_new_thread
 
