@@ -132,6 +132,8 @@ botResponses = []	# Hold responses for agavebot
 botPower = False	# Hold agavebot power
 msgLog = []			# Hold log of all messages
 
+peers["Printer"] = "192.168.40.180"
+
 def handleUser():
 	"""Get and parse user input."""
 	global botPower
