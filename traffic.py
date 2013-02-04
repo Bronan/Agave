@@ -12,22 +12,28 @@ KICK = (COMMAND_CHAR + "kick").lower()
 QUIT = (COMMAND_CHAR + "quit").lower()
 
 												# Port to send packets on
-def connectionPrompt(connectionType):
-  
+def connectionPrompt():
+	global LOCAL_IP
+	
+	connectionType = raw_input("Local(L) or Remote(R) or Manual(M) Connection?: ")
+	connectionType = str(connectionType)
+	connectionType = connectionType.upper()
+	
+	
 	if connectionType[0:1] == 'L':
 		print "Using Local IP: " + socket.gethostbyname(socket.gethostname())
 		return socket.gethostbyname(socket.gethostname())
 		
 	elif connectionType[0:1] == 'R':
-		myIP = urllib2.urlopen('http://ip.42.pl/raw').read()
-		print "Using Public IP: " + myIP
-		return myIP
+		LOCAL_IP = urllib2.urlopen('http://ip.42.pl/raw').read()
+		print "Using Public IP: " + LOCAL_IP
+		return LOCAL_IP
 		
 	elif connectionType[0:1] == 'M':
-		myIP = raw_input("IP Address: ")
-		myIP =str(myIP)
-		print "Using Manual IP: " + myIP
-		return myIP
+		LOCAL_IP = raw_input("IP Address: ")
+		LOCAL_IP =str(LOCAL_IP)
+		print "Using Manual IP: " + LOCAL_IP
+		return LOCAL_IP
 	else:
 		print 'INVALID INPUT'
 		connectionPrompt()
