@@ -86,7 +86,10 @@ Changes:
 	
 	v2.19NS2
 	Added sleep timer back in.
-	Set sleep timer to 8 hours.
+	Set sleep timer to 8 hours
+	
+	v2.19NS3
+	Added agave as login to IDU
 	
 	To do: Change version number when change version moves above this line.
 	v2.20+
@@ -151,7 +154,7 @@ def emulateIDU():
 		while username == "":
 			username = ui.getUserMsg("SDIDU login: ", sleepEn=False, log=False)
 		password = ui.getUserMsg("Password: ", sleepEn=False, pwd=True, log=False)
-		user = (username == "factory") or (username == "root")
+		user = (username == "factory") or (username == "root") or (username == "agave")
 		if user and ((password == "exit") or (password == "arct1c")):
 			opsys.exit()
 		elif user and (password == "resume"):
