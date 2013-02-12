@@ -5,7 +5,7 @@ import opsys, etc, mgmt, traffic, ui	# opsys needs to be imported first.
 from thread import start_new_thread
 
 # constants
-VERSION = """2.19NS2"""
+VERSION = """2.19NS3"""
 VERSION_HISTORY = """
 Last Author:
 	Chris
